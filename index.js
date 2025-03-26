@@ -2,27 +2,20 @@
 // min 8 char, no space, excl username
 
 
-let password = "abcdefgh";
-let username = "sannejohansson"; 
-
-function isValidPassword(password) {
+function isValidPassword(password, username) {
     const spaceRegex = /\s/;
     
     if (password.length < 8) {
         return false; 
-    }
-
-    if (spaceRegex.test(password)) {
+    } else if (spaceRegex.test(password)) {
         return false;
-    }
-
-    if (password.includes(username)) {
+    } else if (password.includes(username)) {
         return false;
-    }
-
+    } else {
     return true; 
+    }
 }
 
-console.log(isValidPassword("abcdefgh"));
+console.log(isValidPassword("abcdefgh", "sannejohansson"));
 
 
